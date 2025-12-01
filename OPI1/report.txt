@@ -1,0 +1,6 @@
+=== Zoo Animal Report ===
+Species             Count     Average Age    
+---------------------------------------------
+Lion                2         7.0            
+---------------------------------------------
+Total animals: 2

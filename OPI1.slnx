@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="OPI1/OPI1.vcxproj" Id="4ab72a34-9e54-41c9-93dd-02a563e57eca" />
+</Solution>

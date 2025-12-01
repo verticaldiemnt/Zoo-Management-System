@@ -1,0 +1,8 @@
+# Format: username:password:role
+inspector1:inspectorpass:inspector
+vet1:vetpass:veterinarian
+admin:adminpass:administrator
+director:directorpass:director
+yarik:yaroslav:administrator
+illia:vab:inspector
+lexxus:123123:inspector
