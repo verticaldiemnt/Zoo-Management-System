@@ -17,9 +17,9 @@ zoo-system/
 How to compile
 Для компіляції необхідно зібрати основний файл проєкту:
 
-Bash
+```Bash
 
-g++ main.cpp -o zoo_system
+g++ main.cpp -o zoo_system```
 Запуск
 Після успішної компіляції:
 
