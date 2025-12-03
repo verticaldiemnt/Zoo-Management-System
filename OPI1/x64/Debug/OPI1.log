@@ -1,2 +1,3 @@
 ﻿  OPI1.cpp
-  OPI1.vcxproj -> C:\Users\Admin\1 COURSE\Version-Control-System-Lab-6\x64\Debug\OPI1.exe
+E:\git_proj\Zoo-Management-System\OPI1\OPI1.cpp(587,65): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  OPI1.vcxproj -> E:\git_proj\Zoo-Management-System\x64\Debug\OPI1.exe

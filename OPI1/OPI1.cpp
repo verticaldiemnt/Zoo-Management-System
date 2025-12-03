@@ -553,50 +553,70 @@ void generateReport(const Animal animals[], int count) {
     SpeciesReport reportData[MAX_ANIMALS];
     int reportSize = 0;
 
+    // === FIX #1: Case-insensitive grouping ===
+    auto toLower = [](string s) {
+        for (char& c : s) c = tolower(c);
+        return s;
+        };
+
     for (int i = 0; i < count; ++i) {
+        string normalized = toLower(animals[i].species);
         bool found = false;
+
         for (int j = 0; j < reportSize; ++j) {
-            if (reportData[j].species == animals[i].species) {
+            if (toLower(reportData[j].species) == normalized) {
                 reportData[j].count++;
                 reportData[j].totalAge += animals[i].age;
                 found = true;
                 break;
             }
         }
+
         if (!found) {
-            if (reportSize < MAX_ANIMALS) {
-                reportData[reportSize].species = animals[i].species;
-                reportData[reportSize].count = 1;
-                reportData[reportSize].totalAge = animals[i].age;
-                reportSize++;
-            }
+            reportData[reportSize].species = animals[i].species; // зберігаємо перший варіант написання
+            reportData[reportSize].count = 1;
+            reportData[reportSize].totalAge = animals[i].age;
+            reportSize++;
         }
     }
 
+    // === FIX #2: Dynamic column width ===
+    int speciesColumnWidth = 20;
+    for (int i = 0; i < reportSize; ++i) {
+        if (reportData[i].species.length() + 2 > speciesColumnWidth)
+            speciesColumnWidth = reportData[i].species.length() + 2;
+    }
+
     ostringstream reportText;
+
     reportText << "=== Zoo Animal Report ===\n";
-    reportText << left << setw(20) << "Species"
+    reportText << left << setw(speciesColumnWidth) << "Species"
         << setw(10) << "Count"
         << setw(15) << "Average Age" << "\n";
-    reportText << string(45, '-') << "\n";
+
+    reportText << string(speciesColumnWidth + 25, '-') << "\n";
 
     int totalAnimals = 0;
-    for (int i = 0; i < reportSize; ++i) {
-        double avgAge = (reportData[i].count > 0) ?
-            static_cast<double>(reportData[i].totalAge) / reportData[i].count : 0.0;
 
-        reportText << left << setw(20) << reportData[i].species
+    for (int i = 0; i < reportSize; ++i) {
+        double avgAge = (reportData[i].count > 0)
+            ? static_cast<double>(reportData[i].totalAge) / reportData[i].count
+            : 0.0;
+
+        reportText << left << setw(speciesColumnWidth) << reportData[i].species
             << setw(10) << reportData[i].count
             << setw(15) << fixed << setprecision(1) << avgAge << "\n";
 
         totalAnimals += reportData[i].count;
     }
 
-    reportText << string(45, '-') << "\n";
+    reportText << string(speciesColumnWidth + 25, '-') << "\n";
     reportText << "Total animals: " << totalAnimals << "\n";
 
+    // Вивід у консоль
     cout << "\n" << reportText.str() << "\n";
 
+    // Запис у файл
     ofstream fout(REPORT_FILE);
     if (fout.is_open()) {
         fout << reportText.str();
@@ -611,6 +631,7 @@ void generateReport(const Animal animals[], int count) {
 void runReportModule() {
     Animal animals[MAX_ANIMALS];
     int animalCount = 0;
+
     loadAnimals(animals, animalCount);
 
     cout << "\n=== Report Animals Module ===\n";

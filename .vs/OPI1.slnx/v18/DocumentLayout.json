@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u0456 \u041E\u041F\\OPI1\\",
+  "WorkspaceRootPath": "E:\\git_proj\\Zoo-Management-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4AB72A34-9E54-41C9-93DD-02A563E57ECA}|OPI1\\OPI1.vcxproj|D:\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u0456 \u041E\u041F\\OPI1\\OPI1\\OPI1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4AB72A34-9E54-41C9-93DD-02A563E57ECA}|OPI1\\OPI1.vcxproj|E:\\git_proj\\Zoo-Management-System\\OPI1\\OPI1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4AB72A34-9E54-41C9-93DD-02A563E57ECA}|OPI1\\OPI1.vcxproj|solutionrelative:OPI1\\OPI1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "OPI1.cpp",
-              "DocumentMoniker": "D:\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u0456 \u041E\u041F\\OPI1\\OPI1\\OPI1.cpp",
+              "DocumentMoniker": "E:\\git_proj\\Zoo-Management-System\\OPI1\\OPI1.cpp",
               "RelativeDocumentMoniker": "OPI1\\OPI1.cpp",
-              "ToolTip": "D:\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u0456 \u041E\u041F\\OPI1\\OPI1\\OPI1.cpp",
+              "ToolTip": "E:\\git_proj\\Zoo-Management-System\\OPI1\\OPI1.cpp",
               "RelativeToolTip": "OPI1\\OPI1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAFkCAAAAAAAAAAAQwIICAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-11-11T20:54:35.264Z",
               "EditorCaption": ""
