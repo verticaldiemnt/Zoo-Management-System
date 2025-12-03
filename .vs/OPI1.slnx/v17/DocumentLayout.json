@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\1 COURSE\\Version-Control-System-Lab-6\\",
+  "WorkspaceRootPath": "E:\\proj_git\\Zoo-Management-System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4AB72A34-9E54-41C9-93DD-02A563E57ECA}|OPI1\\OPI1.vcxproj|C:\\Users\\Admin\\1 COURSE\\Version-Control-System-Lab-6\\OPI1\\OPI1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4AB72A34-9E54-41C9-93DD-02A563E57ECA}|OPI1\\OPI1.vcxproj|E:\\proj_git\\Zoo-Management-System\\OPI1\\OPI1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4AB72A34-9E54-41C9-93DD-02A563E57ECA}|OPI1\\OPI1.vcxproj|solutionrelative:OPI1\\OPI1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -14,21 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "OPI1.cpp",
-              "DocumentMoniker": "C:\\Users\\Admin\\1 COURSE\\Version-Control-System-Lab-6\\OPI1\\OPI1.cpp",
+              "DocumentMoniker": "E:\\proj_git\\Zoo-Management-System\\OPI1\\OPI1.cpp",
               "RelativeDocumentMoniker": "OPI1\\OPI1.cpp",
-              "ToolTip": "C:\\Users\\Admin\\1 COURSE\\Version-Control-System-Lab-6\\OPI1\\OPI1.cpp",
+              "ToolTip": "E:\\proj_git\\Zoo-Management-System\\OPI1\\OPI1.cpp",
               "RelativeToolTip": "OPI1\\OPI1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAD0CAAAAAAAAAAA0wF4CAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-01T22:51:37.43Z",
               "EditorCaption": ""

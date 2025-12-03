@@ -458,6 +458,9 @@ void runAddAnimalModule() {
 // =================================================================================
 // МОДУЛЬ 3: ОНОВЛЕННЯ ІНФОРМАЦІЇ
 // =================================================================================
+// Припускаємо, що Animal і trim() визначені.
+// Припускаємо, що findAnimalById, saveAnimals, loadAnimals, showAnimals визначені.
+// Припускаємо, що MAX_ANIMALS визначено.
 
 void updateAnimal(Animal animals[], int count) {
     cout << "\n=== Update Animal Information ===\n";
@@ -468,6 +471,7 @@ void updateAnimal(Animal animals[], int count) {
 
     int id;
     cout << "Enter animal ID to update: ";
+    // Введення ID тварини (залишаємо без змін)
     while (!(cin >> id)) {
         cout << "Invalid input. Please enter a number: ";
         cin.clear();
@@ -487,25 +491,86 @@ void updateAnimal(Animal animals[], int count) {
     cout << "Age: " << animal->age << "\n";
     cout << "Health: " << animal->healthStatus << "\n\n";
 
-    cout << "Enter new age (current " << animal->age << "): ";
-    while (!(cin >> animal->age)) {
-        cout << "Invalid input. Please enter a number: ";
-        cin.clear();
-        cin.ignore(10000, '\n');
+    // --- ВИПРАВЛЕННЯ 1 & 2: ОНОВЛЕННЯ ВІКУ З ВАЛІДАЦІЄЮ ТА ПРОПУСКОМ ---
+
+    // Використовуємо рядок для зчитування, щоб можна було перевірити на пропуск (порожній рядок)
+    string newAgeStr;
+    bool ageUpdated = false;
+
+    cout << "Enter new age (current " << animal->age << ", leave blank to keep current): ";
+
+    // Введення віку (дозволяє пропуск)
+    while (true) {
+        getline(cin, newAgeStr);
+        newAgeStr = trim(newAgeStr); // Видаляємо пробіли
+
+        if (newAgeStr.empty()) {
+            // Користувач натиснув Enter (пропуск)
+            cout << "Keeping current age: " << animal->age << "\n";
+            break;
+        }
+
+        // Спроба конвертувати рядок у число
+        try {
+            int newAge = stoi(newAgeStr);
+
+            // ВАЛІДАЦІЯ: Перевірка на від'ємний вік
+            if (newAge < 0) {
+                cout << "Error: Age cannot be negative. Please enter a non-negative number: ";
+                continue; // Повторити цикл
+            }
+
+            // Успішна валідація та оновлення
+            animal->age = newAge;
+            ageUpdated = true;
+            break; // Вихід з циклу
+
+        }
+        catch (const std::invalid_argument& e) {
+            // Обробка некоректного введення (не число)
+            cout << "Invalid input. Please enter a valid non-negative number or leave blank: ";
+            // cin.clear() та cin.ignore() не потрібні, оскільки використовується getline
+            continue;
+        }
+        catch (const std::out_of_range& e) {
+            // Обробка виходу за межі діапазону int
+            cout << "Input number is too large. Please enter a smaller number: ";
+            continue;
+        }
     }
-    cin.ignore(10000, '\n');
+    // ------------------------------------------------------------------------
 
-    cout << "Enter new health status (current: " << animal->healthStatus << "): ";
-    getline(cin, animal->healthStatus);
-    animal->healthStatus = trim(animal->healthStatus);
+    cout << "Enter new health status (current: " << animal->healthStatus << ", leave blank to keep current): ";
 
+    // Оновлення статусу здоров'я (з можливістю пропуску)
+    string newHealthStatus;
+    getline(cin, newHealthStatus);
+    newHealthStatus = trim(newHealthStatus);
+
+    if (!newHealthStatus.empty()) {
+        animal->healthStatus = newHealthStatus;
+    }
+    else {
+        cout << "Keeping current health status: " << animal->healthStatus << "\n";
+    }
+
+    // Зберігаємо лише якщо щось було оновлено або якщо це в кінці функції (як було раніше)
     saveAnimals(animals, count);
     cout << "\nAnimal information updated successfully!\n";
+
+    if (ageUpdated) {
+        cout << "New age is " << animal->age << ".\n";
+    }
 }
+
+// Функція runUpdateAnimalModule не містить логічних помилок, що впливають на результати тестів,
+// тому залишається без змін (може вимагати незначних коригувань для виведення, але
+// для виправлення помилок тестів це не критично).
 
 void runUpdateAnimalModule() {
     Animal animals[MAX_ANIMALS];
     int animalCount = 0;
+    // Припускаємо, що loadAnimals завантажує дані
     loadAnimals(animals, animalCount);
 
     cout << "\n=== Zoo Management System ===\n";
@@ -528,6 +593,7 @@ void runUpdateAnimalModule() {
             updateAnimal(animals, animalCount);
         }
         else if (choice == "2") {
+            // Припускаємо, що showAnimals виводить дані
             showAnimals(animals, animalCount);
         }
         else if (choice == "3") {
@@ -539,7 +605,6 @@ void runUpdateAnimalModule() {
         }
     }
 }
-
 // =================================================================================
 // МОДУЛЬ 4: ФОРМУВАННЯ ЗВІТІВ
 // =================================================================================

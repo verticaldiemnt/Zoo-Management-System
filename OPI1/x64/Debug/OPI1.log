@@ -1,2 +1,5 @@
 ﻿  OPI1.cpp
-  OPI1.vcxproj -> C:\Users\Admin\1 COURSE\Version-Control-System-Lab-6\x64\Debug\OPI1.exe
+E:\proj_git\Zoo-Management-System\OPI1\OPI1.cpp(529,45): warning C4101: 'e': unreferenced local variable
+E:\proj_git\Zoo-Management-System\OPI1\OPI1.cpp(535,41): warning C4101: 'e': unreferenced local variable
+  LINK : E:\proj_git\Zoo-Management-System\x64\Debug\OPI1.exe not found or not built by the last incremental link; performing full link
+  OPI1.vcxproj -> E:\proj_git\Zoo-Management-System\x64\Debug\OPI1.exe
